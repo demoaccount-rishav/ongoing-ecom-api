@@ -11,12 +11,18 @@ export default class ProductController {
         const { name, desc, price, category, sizes } = req.body;
         let imageUrl = 'images/' + req.file.filename;
         const product = ProductModel.add(name, desc, parseFloat(price), imageUrl, category, sizes);
-        console.log(product);
         return res.status(201).json({ 'message': 'successfully inserted product', 'product-data': product })
     }
 
     rateProduct(req, res) {
-
+        const {userId, productId, rating} = req.query;
+        const error = ProductModel.rateProduct(userId, productId, rating);
+        if (error){
+            return res.status(401).json({'message':'Error Encounterd', error});
+        }
+        else{
+            return res.status(200).json({'message':'Product Rated Successfully'});
+        }
     }
 
     getOneProduct(req, res) {
