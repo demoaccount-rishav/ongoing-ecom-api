@@ -18,6 +18,8 @@ export default function jwtAuthorizer(req, res, next) {
             const token_payload = jwt.verify(token, "p7tiOCS9eIR0rCeDPi7GzWhc8m7oyoQK");
 
             if (token_payload) {
+                // this userId is used inside cart controller
+                req.body.userId = token_payload.id;
                 next();
             }
 
