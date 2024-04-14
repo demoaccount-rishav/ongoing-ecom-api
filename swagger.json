@@ -1,0 +1,81 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "description": "demo api for an e-commerce application",
+        "title": "MY ECOM API",
+        "contact": {
+            "email": "rishavbhowmick.2002.va@gmail.com",
+            "url": "https://github.com/demoaccount-rishav/ongoing-ecom-api.git"
+        }
+    },
+    "host": "localhost:3200",
+    "securityDefinitions": {
+        "JWT": {
+            "type": "apiKey",
+            "in": "header",
+            "name": "authorization"
+        }
+    },
+    "paths": {
+        "/api/users/signin": {
+            "post": {
+                "summary": "only valid user receives token after successful login",
+                "tags": [
+                    "User Login"
+                ],
+                "description": "api to log in and access other features",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "user credentials",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "email": {
+                                    "type": "string",
+                                    "description": "email of valid user"
+                                },
+                                "password": {
+                                    "type": "string",
+                                    "description": "password of valid user"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok"
+                    },
+                    "400": {
+                        "description": "invalid credentials"
+                    }
+                }
+            }
+        },
+        "/api/products": {
+            "get": {
+                "summary": "only valid gets to access products",
+                "tags": [
+                    "Products Page"
+                ],
+                "description": "api to to get all products",
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok"
+                    },
+                    "401": {
+                        "description": "unauthorized access"
+                    }
+                }
+            }
+        }
+    }
+}

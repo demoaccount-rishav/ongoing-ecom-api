@@ -4,3 +4,8 @@ ProductController:
     Get one Product
     Rate Product
     Filter Product
+
+{
+   "email": "seller1@ecom.com",
+   "password": "password1"
+}

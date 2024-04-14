@@ -1,14 +1,17 @@
 import express, { json, urlencoded } from 'express';
+import swaggerUi from 'swagger-ui-express';
 
 import ProductRouter from './src/features/product/product.routes.js';
 import UserRouter from './src/features/user/user.routes.js';
 // import basicAuthoriser from './src/middlewares/basicAuthentication.middleware.js';
 import jwtAuthorizer from './src/middlewares/jwt.middleware.js';
 import CartRouter from './src/features/cart/cart.routes.js';
+import swaggerDocument from './swagger.json' assert { type: "json" };
 
 const app = express();
 const port = 3200;
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(express.static('uploads'));
 app.use(urlencoded({ extended: true }))
 app.use(json())

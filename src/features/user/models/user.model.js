@@ -30,3 +30,4 @@ var users = [
     new UserModel('Admin User 1', 'admin1@ecom.com', 'password3', 'Admin'),
     new UserModel('Customer User 1', 'customer1@ecom.com', 'password4', 'Customer'),
 ]
+
