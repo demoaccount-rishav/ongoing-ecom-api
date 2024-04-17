@@ -7,6 +7,8 @@ import UserRouter from './src/features/user/user.routes.js';
 import jwtAuthorizer from './src/middlewares/jwt.middleware.js';
 import CartRouter from './src/features/cart/cart.routes.js';
 import swaggerDocument from './swagger.json' assert { type: "json" };
+import loggerMiddleware from './src/middlewares/logger.middleware.js';
+import WinstonLoggerMiddleware from './src/middlewares/winston.logger.middleware.js';
 
 const app = express();
 const port = 3200;
@@ -15,7 +17,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(express.static('uploads'));
 app.use(urlencoded({ extended: true }))
 app.use(json())
-
+app.use(loggerMiddleware, WinstonLoggerMiddleware);
 // app.use('/api/products', basicAuthoriser, ProductRouter);
 app.use('/api/products', jwtAuthorizer, ProductRouter);
 app.use('/api/users', UserRouter);

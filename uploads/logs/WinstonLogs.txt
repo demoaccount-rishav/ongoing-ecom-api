@@ -1,0 +1,1 @@
+{"level":"info","message":"/api/users/signup - {\"name\":\"rishav\",\"email\":\"rishav@ecom.com\",\"password\":\"28211\",\"type\":\"Customer\"}","service":"request-login"}
