@@ -14,14 +14,15 @@ export default class ProductController {
         return res.status(201).json({ 'message': 'successfully inserted product', 'product-data': product })
     }
 
-    rateProduct(req, res) {
-        const {userId, productId, rating} = req.query;
-        const error = ProductModel.rateProduct(userId, productId, rating);
-        if (error){
-            return res.status(401).json({'message':'Error Encounterd', error});
-        }
-        else{
-            return res.status(200).json({'message':'Product Rated Successfully'});
+    rateProduct(req, res, next) {
+        const { userId, productId, rating } = req.query;
+        try {
+            ProductModel.rateProduct(userId, productId, rating);
+            return res.status(200).json({ 'message': 'Product Rated Successfully' });
+
+        } catch (error) {
+            // return res.status(401).json({ 'message': 'Error Encounterd', error: error.message });
+            next(error);
         }
     }
 
@@ -37,7 +38,7 @@ export default class ProductController {
             })
         }
     }
-    
+
     // localhost:3200/api/products/filter?minPrice=10&maxPrice=30&category=Category1
     filterProducts(req, res) {
         const { minPrice, maxPrice, category } = req.query

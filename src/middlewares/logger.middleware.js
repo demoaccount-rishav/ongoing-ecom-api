@@ -10,10 +10,19 @@ async function log(logData) {
     }
 }
 
-export default async function loggerMiddleware(req, res, next) {
+export async function errorLog(logData) {
+    try {
+        const log_data = `\n\n${new Date().toString()} - ${logData}`;
+        await appendFile(resolve('uploads', 'logs', 'ErrorLogs.txt'), log_data);
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export async function loggerMiddleware(req, res, next) {
     if (!req.url.includes('signin')) {
-        const logData = `${req.url} - ${JSON.stringify(req.body)}`
+        const logData = `${req.url} - ${JSON.stringify(req.body)}`;
         await log(logData);
     }
     next();
-} 
+}

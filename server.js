@@ -7,8 +7,9 @@ import UserRouter from './src/features/user/user.routes.js';
 import jwtAuthorizer from './src/middlewares/jwt.middleware.js';
 import CartRouter from './src/features/cart/cart.routes.js';
 import swaggerDocument from './swagger.json' assert { type: "json" };
-import loggerMiddleware from './src/middlewares/logger.middleware.js';
+import { loggerMiddleware } from './src/middlewares/logger.middleware.js';
 import WinstonLoggerMiddleware from './src/middlewares/winston.logger.middleware.js';
+import { defaultErrorHandlerMiddleware } from './src/middlewares/defaultErrorHandler.middleware.js';
 
 const app = express();
 const port = 3200;
@@ -23,11 +24,15 @@ app.use('/api/products', jwtAuthorizer, ProductRouter);
 app.use('/api/users', UserRouter);
 app.use('/api/cart', jwtAuthorizer, CartRouter);
 
-
 app.get('/', (req, res) => {
-    res.send('Welcome To APIs');
+    return res.send('Welcome To APIs');
 })
 
+app.use((req, res) => {
+    return res.status(404).json({ 'message': 'API not found. Please refer to our doc. for more informations' });
+})
+
+app.use(defaultErrorHandlerMiddleware);
 
 
 app.listen(port, () => {

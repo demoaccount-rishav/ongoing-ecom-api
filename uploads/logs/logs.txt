@@ -1,7 +1,91 @@
 
 
-Mon Apr 15 2024 21:28:35 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}
+Wed Apr 17 2024 13:21:41 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=10&rating=2.9 - {}
 
-Mon Apr 15 2024 21:28:44 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}
+Wed Apr 17 2024 13:21:59 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=10&rating=2.9 - {}
 
-Tue Apr 16 2024 01:08:43 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}
+Wed Apr 17 2024 13:22:48 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=1&rating=2.9 - {}
+
+Wed Apr 17 2024 13:27:00 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=1&rating=2.9 - {}
+
+Wed Apr 17 2024 13:50:35 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=1&rating=2.9 - {}
+
+Wed Apr 17 2024 13:50:44 GMT+0530 (India Standard Time) - /api/products/rate?userId=10&productId=1&rating=2.9 - {}
+
+Wed Apr 17 2024 13:51:00 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=10&rating=2.9 - {}
+
+Wed Apr 17 2024 13:51:17 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=10&rating=2.9 - {}
+
+Wed Apr 17 2024 13:51:42 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=10&rating=2.9 - {}
+
+Wed Apr 17 2024 13:54:24 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=10&rating=2.9 - {}
+
+Wed Apr 17 2024 13:54:59 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=10&rating=2.9 - {}
+
+Wed Apr 17 2024 13:55:04 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=1&rating=2.9 - {}
+
+Wed Apr 17 2024 13:55:16 GMT+0530 (India Standard Time) - /api/cart?productId=1&quantity=1 - {}
+
+Wed Apr 17 2024 13:56:15 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}
+
+Wed Apr 17 2024 13:56:30 GMT+0530 (India Standard Time) - /api/products/ - {}
+
+Wed Apr 17 2024 13:56:37 GMT+0530 (India Standard Time) - /api/products/ - {}
+
+Wed Apr 17 2024 13:56:51 GMT+0530 (India Standard Time) - /api/products/filter?minPrice=10&maxPrice=1000 - {}
+
+Wed Apr 17 2024 13:56:57 GMT+0530 (India Standard Time) - /api/products/filter?minPrice=10&maxPrice=1000 - {}
+
+Wed Apr 17 2024 13:57:10 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=1&rating=2.9 - {}
+
+Wed Apr 17 2024 13:57:16 GMT+0530 (India Standard Time) - /api/products/filter?minPrice=10&maxPrice=1000 - {}
+
+Wed Apr 17 2024 13:57:44 GMT+0530 (India Standard Time) - /api/cart?productId=1&quantity=1 - {}
+
+Wed Apr 17 2024 13:57:52 GMT+0530 (India Standard Time) - /api/cart?productId=1&quantity=1 - {}
+
+Wed Apr 17 2024 13:57:56 GMT+0530 (India Standard Time) - /api/cart?productId=1&quantity=1 - {}
+
+Wed Apr 17 2024 13:58:37 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=1&rating=2.9 - {}
+
+Wed Apr 17 2024 13:58:47 GMT+0530 (India Standard Time) - /api/products/filter?minPrice=10&maxPrice=1000 - {}
+
+Wed Apr 17 2024 13:59:40 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=1&rating=2.9 - {}
+
+Wed Apr 17 2024 13:59:48 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=1&rating=2.9 - {}
+
+Wed Apr 17 2024 14:00:12 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=2&rating=4.9 - {}
+
+Wed Apr 17 2024 14:00:14 GMT+0530 (India Standard Time) - /api/products/ - {}
+
+Wed Apr 17 2024 14:00:23 GMT+0530 (India Standard Time) - /api/products/filter?minPrice=10&maxPrice=1000 - {}
+
+Wed Apr 17 2024 14:00:46 GMT+0530 (India Standard Time) - /api/cart?productId=1&quantity=1 - {}
+
+Wed Apr 17 2024 14:00:50 GMT+0530 (India Standard Time) - /api/cart?productId=1&quantity=1 - {}
+
+Wed Apr 17 2024 14:00:53 GMT+0530 (India Standard Time) - /api/cart?productId=1&quantity=1 - {}
+
+Wed Apr 17 2024 14:01:32 GMT+0530 (India Standard Time) - /api/cart/delete?cartItemId=4 - {}
+
+Wed Apr 17 2024 14:01:44 GMT+0530 (India Standard Time) - /api/cart/delete?cartItemId=4 - {}
+
+Wed Apr 17 2024 14:01:47 GMT+0530 (India Standard Time) - /api/cart?productId=1&quantity=1 - {}
+
+Wed Apr 17 2024 14:02:03 GMT+0530 (India Standard Time) - /api/products/rate?userId=9&productId=2&rating=4.9 - {}
+
+Wed Apr 17 2024 14:02:12 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=2&rating=4.9 - {}
+
+Wed Apr 17 2024 14:02:21 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=2&rating=4.9 - {}
+
+Wed Apr 17 2024 14:02:35 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=2&rating=4.9 - {}
+
+Wed Apr 17 2024 14:03:22 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=2&rating=4.9 - {}
+
+Wed Apr 17 2024 14:03:37 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=2&rating=4.9 - {}
+
+Wed Apr 17 2024 14:04:03 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=2&rating=4.9 - {}
+
+Wed Apr 17 2024 14:05:00 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=2&rating=4.9 - {}
+
+Wed Apr 17 2024 14:10:52 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=2&rating=4.9 - {}

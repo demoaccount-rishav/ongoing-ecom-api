@@ -1,3 +1,4 @@
+import ApplicationError from "../../../error-handler/applicationError.js";
 import UserModel from "../../user/models/user.model.js";
 
 export default class ProductModel {
@@ -36,13 +37,15 @@ export default class ProductModel {
         // validate user
         const validateUser = users.find((user) => user.id == userId)
         if (!validateUser) {
-            return "User not found";
+            // throw new Error("User not found");
+            throw new ApplicationError("User not found", 400);
         }
 
         // validate product
         const validateProduct = products.find((product) => product.id == productId);
         if (!validateProduct) {
-            return "Product not found";
+            // throw new Error("Product not found");
+            throw new ApplicationError("Product not found", 400);
         }
 
         if (!validateProduct.ratings) {

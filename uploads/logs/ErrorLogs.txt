@@ -1,0 +1,9 @@
+
+
+Wed Apr 17 2024 13:21:41 GMT+0530 (India Standard Time) - reqUrl: /api/products/rate?userId=1&productId=10&rating=2.9 - reqMethod: GET - error: Cannot destructure property 'userId' of 'req.queries' as it is undefined.
+
+Wed Apr 17 2024 14:02:21 GMT+0530 (India Standard Time) - reqUrl: /api/products/rate?userId=1&productId=2&rating=4.9 - reqMethod: GET - error: Cannot destructure property 'userId' of 'req.queryyy' as it is undefined.
+
+Wed Apr 17 2024 14:03:37 GMT+0530 (India Standard Time) - reqUrl: /api/products/rate?userId=1&productId=2&rating=4.9 - reqMethod: GET - error: Cannot destructure property 'userId' of 'req.queryyyy' as it is undefined.
+
+Wed Apr 17 2024 14:10:52 GMT+0530 (India Standard Time) - reqUrl: /api/products/rate?userId=1&productId=2&rating=4.9 - reqMethod: GET - error: Cannot destructure property 'userId' of 'req.querya' as it is undefined.
