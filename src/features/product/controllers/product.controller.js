@@ -15,7 +15,9 @@ export default class ProductController {
     }
 
     rateProduct(req, res, next) {
-        const { userId, productId, rating } = req.query;
+        // const { userId, productId, rating } = req.query;
+        const { productId, rating } = req.query;
+        const userId = req.body.userId;
         try {
             ProductModel.rateProduct(userId, productId, rating);
             return res.status(200).json({ 'message': 'Product Rated Successfully' });

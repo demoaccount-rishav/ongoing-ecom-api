@@ -89,3 +89,99 @@ Wed Apr 17 2024 14:04:03 GMT+0530 (India Standard Time) - /api/products/rate?use
 Wed Apr 17 2024 14:05:00 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=2&rating=4.9 - {}
 
 Wed Apr 17 2024 14:10:52 GMT+0530 (India Standard Time) - /api/products/rate?userId=1&productId=2&rating=4.9 - {}
+
+Sat Apr 27 2024 20:32:09 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}
+
+Sat Apr 27 2024 20:32:21 GMT+0530 (India Standard Time) - /api/products/ - {}
+
+Sat Apr 27 2024 20:33:03 GMT+0530 (India Standard Time) - /api/products/ - {}
+
+Sat Apr 27 2024 20:33:40 GMT+0530 (India Standard Time) - /api/products/ - {}
+
+Sat Apr 27 2024 20:33:58 GMT+0530 (India Standard Time) - /api/products/rate?productId=1&rating=1.5 - {}
+
+Sat Apr 27 2024 20:34:06 GMT+0530 (India Standard Time) - /api/products/rate?productId=1&rating=1.5 - {}
+
+Sat Apr 27 2024 20:34:07 GMT+0530 (India Standard Time) - /api/products/rate?productId=1&rating=1.5 - {}
+
+Sat Apr 27 2024 20:34:15 GMT+0530 (India Standard Time) - /api/products/rate?productId=1&rating=1.5 - {}
+
+Sat Apr 27 2024 20:34:16 GMT+0530 (India Standard Time) - /api/products/rate?productId=1&rating=1.5 - {}
+
+Sat Apr 27 2024 20:36:44 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}
+
+Sat Apr 27 2024 20:36:59 GMT+0530 (India Standard Time) - /api/products/ - {}
+
+Sat Apr 27 2024 20:37:05 GMT+0530 (India Standard Time) - /api/products/filter?minPrice=10&maxPrice=1000 - {}
+
+Sat Apr 27 2024 20:37:12 GMT+0530 (India Standard Time) - /api/products/rate?productId=1&rating=1.5 - {}
+
+Sat Apr 27 2024 20:37:23 GMT+0530 (India Standard Time) - /api/cart?productId=10&quantity=1 - {}
+
+Sat Apr 27 2024 20:37:41 GMT+0530 (India Standard Time) - /api/cart?productId=10&quantity=1 - {}
+
+Sat Apr 27 2024 20:37:45 GMT+0530 (India Standard Time) - /api/cart?productId=10&quantity=1 - {}
+
+Sat Apr 27 2024 20:38:05 GMT+0530 (India Standard Time) - /api/products/rate?productId=1&rating=1.5 - {}
+
+Sat Apr 27 2024 20:38:12 GMT+0530 (India Standard Time) - /api/products/filter?minPrice=10&maxPrice=1000 - {}
+
+Sat Apr 27 2024 20:38:31 GMT+0530 (India Standard Time) - /api/cart/delete?cartItemId=3 - {}
+
+Sat Apr 27 2024 20:38:35 GMT+0530 (India Standard Time) - /api/cart?productId=10&quantity=1 - {}
+
+Sat Apr 27 2024 20:38:43 GMT+0530 (India Standard Time) - /api/cart?productId=10&quantity=1 - {}
+
+Sat Apr 27 2024 20:38:47 GMT+0530 (India Standard Time) - /api/cart?productId=10&quantity=1 - {}
+
+Sat Apr 27 2024 20:38:53 GMT+0530 (India Standard Time) - /api/cart?productId=10&quantityy=1 - {}
+
+Sat Apr 27 2024 20:39:02 GMT+0530 (India Standard Time) - /api/cart?productId=10&quantityy=1 - {}
+
+Sat Apr 27 2024 20:39:06 GMT+0530 (India Standard Time) - /api/cart?productId=10&quantity=1 - {}
+
+Sat Apr 27 2024 20:39:11 GMT+0530 (India Standard Time) - /api/cart?productId=10&quantity=1 - {}
+
+Sat Apr 27 2024 20:39:14 GMT+0530 (India Standard Time) - /api/cart?productId=10&quantity=1 - {}
+
+Sat Apr 27 2024 20:39:44 GMT+0530 (India Standard Time) - /api/products/rate?productId=10&rating=1.5 - {}
+
+Sat Apr 27 2024 20:39:58 GMT+0530 (India Standard Time) - /api/products/rate?productId=1&rating=1.5 - {}
+
+Sat Apr 27 2024 20:40:03 GMT+0530 (India Standard Time) - /api/products/rate?productId=1&rating=1.5 - {}
+
+Sat Apr 27 2024 20:40:08 GMT+0530 (India Standard Time) - /api/products/rate?productId=1&rating=1.5 - {}
+
+Sat Apr 27 2024 20:40:42 GMT+0530 (India Standard Time) - /api/products/rate?productId=1&rating=1.5 - {}
+
+Sat Apr 27 2024 20:40:45 GMT+0530 (India Standard Time) - /api/products/filter?minPrice=10&maxPrice=1000 - {}
+
+Sat Apr 27 2024 21:15:23 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}
+
+Sat Apr 27 2024 21:16:04 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}
+
+Sat Apr 27 2024 21:20:29 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}
+
+Sat Apr 27 2024 21:21:01 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}
+
+Sat Apr 27 2024 21:21:28 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}
+
+Sat Apr 27 2024 21:24:38 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}
+
+Sat Apr 27 2024 21:26:09 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}
+
+Sat Apr 27 2024 21:26:25 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}
+
+Sat Apr 27 2024 21:28:29 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}
+
+Sat Apr 27 2024 21:29:14 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}
+
+Sat Apr 27 2024 21:31:34 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}
+
+Sat Apr 27 2024 21:31:50 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}
+
+Sat Apr 27 2024 21:32:00 GMT+0530 (India Standard Time) - /api/users/signup - {"email":"rishav@ecom.com","password":"28211","type":"Customer"}
+
+Sat Apr 27 2024 21:32:19 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}
+
+Sat Apr 27 2024 21:34:42 GMT+0530 (India Standard Time) - /api/users/signup - {"name":"rishav","email":"rishav@ecom.com","password":"28211","type":"Customer"}

@@ -7,3 +7,17 @@ Wed Apr 17 2024 14:02:21 GMT+0530 (India Standard Time) - reqUrl: /api/products/
 Wed Apr 17 2024 14:03:37 GMT+0530 (India Standard Time) - reqUrl: /api/products/rate?userId=1&productId=2&rating=4.9 - reqMethod: GET - error: Cannot destructure property 'userId' of 'req.queryyyy' as it is undefined.
 
 Wed Apr 17 2024 14:10:52 GMT+0530 (India Standard Time) - reqUrl: /api/products/rate?userId=1&productId=2&rating=4.9 - reqMethod: GET - error: Cannot destructure property 'userId' of 'req.querya' as it is undefined.
+
+Sat Apr 27 2024 20:32:21 GMT+0530 (India Standard Time) - reqUrl: /api/products/ - reqMethod: POST - error: ENOENT: no such file or directory, open 'C:\Users\brush\OneDrive\Documents\CN Backend\working hopefully\ongoing-ecom-api\uploads\images\1714230141898-car racıng.png'
+
+Sat Apr 27 2024 20:33:03 GMT+0530 (India Standard Time) - reqUrl: /api/products/ - reqMethod: POST - error: ENOENT: no such file or directory, open 'C:\Users\brush\OneDrive\Documents\CN Backend\working hopefully\ongoing-ecom-api\uploads\images\1714230183318-car racıng.png'
+
+Sat Apr 27 2024 21:15:23 GMT+0530 (India Standard Time) - reqUrl: /api/users/signup - reqMethod: POST - error: next is not defined
+
+Sat Apr 27 2024 21:16:04 GMT+0530 (India Standard Time) - reqUrl: /api/users/signup - reqMethod: POST - error: instanceDB is not a function
+
+Sat Apr 27 2024 21:20:29 GMT+0530 (India Standard Time) - reqUrl: /api/users/signup - reqMethod: POST - error: instanceDB is not a function
+
+Sat Apr 27 2024 21:21:01 GMT+0530 (India Standard Time) - reqUrl: /api/users/signup - reqMethod: POST - error: Cannot read properties of undefined (reading 'Symbol(options)')
+
+Sat Apr 27 2024 21:21:28 GMT+0530 (India Standard Time) - reqUrl: /api/users/signup - reqMethod: POST - error: instanceDB is not a function

@@ -3,10 +3,19 @@ import jwt from 'jsonwebtoken';
 
 export default class UserController {
 
-    signup(req, res) {
+    signup(req, res, next) {
         const { name, email, password, type } = req.body;
-        UserModel.SignUp(name, email, password, type);
-        res.status(201).json({ 'message': 'User Successfully Added' });
+
+        try {
+            
+            UserModel.SignUp(name, email, password, type).then((newUser) => {
+                res.status(201).json({ 'message': 'User Successfully Added', newUser });
+            })
+
+        } catch (error) {
+            console.log(error);
+            next(error);
+        }
     }
 
     signin(req, res) {

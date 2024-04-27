@@ -10,6 +10,7 @@ import swaggerDocument from './swagger.json' assert { type: "json" };
 import { loggerMiddleware } from './src/middlewares/logger.middleware.js';
 import WinstonLoggerMiddleware from './src/middlewares/winston.logger.middleware.js';
 import { defaultErrorHandlerMiddleware } from './src/middlewares/defaultErrorHandler.middleware.js';
+import { connectToMongoDB } from './src/configs/mongodb.config.js';
 
 const app = express();
 const port = 3200;
@@ -37,4 +38,5 @@ app.use(defaultErrorHandlerMiddleware);
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
+    connectToMongoDB();
 })
