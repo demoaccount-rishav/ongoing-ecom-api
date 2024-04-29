@@ -13,35 +13,37 @@ export default class UserModel {
         this.type = type;
     }
 
-    static SignUp(name, email, password, type) {
-        if (!name || !email || !password || !type) {
-            throw new ApplicationError("Signup fields are insufficient", 400);
+    /*
+        static SignUp(name, email, password, type) {
+            if (!name || !email || !password || !type) {
+                throw new ApplicationError("Signup fields are insufficient", 400);
+            }
+    
+            const instanceUserModel = new UserModel(name, email, password, type);
+            users.push(instanceUserModel);
+            console.log(users);
+    
+            // Get the database
+            const instanceDB = getDb();
+    
+            // Get the collection
+            const usersCollection = instanceDB.collection("users");
+    
+            // Insert new user into the collection
+            return usersCollection.insertOne(instanceUserModel)
+                .then((result) => {
+                    console.log(`New data added to database with insertID: ${result.insertedId}`);
+                    return instanceUserModel;
+                })
+                .catch((err) => {
+                    throw new ApplicationError("Couldn't Enter Data Into DataBase", 400);
+                })
         }
-
-        const instanceUserModel = new UserModel(name, email, password, type);
-        users.push(instanceUserModel);
-        console.log(users);
-
-        // Get the database
-        const instanceDB = getDb();
-
-        // Get the collection
-        const usersCollection = instanceDB.collection("users");
-
-        // Insert new user into the collection
-        return usersCollection.insertOne(instanceUserModel)
-            .then((result) => {
-                console.log(`New data added to database with insertID: ${result.insertedId}`);
-                return instanceUserModel;
-            })
-            .catch((err) => {
-                throw new ApplicationError("Couldn't Enter Data Into DataBase", 400);
-            })
-    }
-
-    static SignIn(email, password) {
-        return users.find(eachUser => eachUser.email == email && eachUser.password == password)
-    }
+    
+        static SignIn(email, password) {
+            return users.find(eachUser => eachUser.email == email && eachUser.password == password)
+        }
+    */
 
     static getAllUsers() {
         return users;

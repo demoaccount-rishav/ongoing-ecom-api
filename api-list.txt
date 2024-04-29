@@ -9,3 +9,8 @@ ProductController:
    "email": "seller1@ecom.com",
    "password": "password1"
 }
+
+create a .env with these params
+
+connectionString = mongodb://127.0.0.1:27017/
+secretOrPrivateKey = p7tiOCS9eIR0rCeDPi7GzWhc8m7oyoQK

@@ -1,6 +1,7 @@
 import express, { json, urlencoded } from 'express';
 import swaggerUi from 'swagger-ui-express';
 
+import './env.js'
 import ProductRouter from './src/features/product/product.routes.js';
 import UserRouter from './src/features/user/user.routes.js';
 // import basicAuthoriser from './src/middlewares/basicAuthentication.middleware.js';

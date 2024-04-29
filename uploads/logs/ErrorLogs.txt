@@ -21,3 +21,17 @@ Sat Apr 27 2024 21:20:29 GMT+0530 (India Standard Time) - reqUrl: /api/users/sig
 Sat Apr 27 2024 21:21:01 GMT+0530 (India Standard Time) - reqUrl: /api/users/signup - reqMethod: POST - error: Cannot read properties of undefined (reading 'Symbol(options)')
 
 Sat Apr 27 2024 21:21:28 GMT+0530 (India Standard Time) - reqUrl: /api/users/signup - reqMethod: POST - error: instanceDB is not a function
+
+Sat Apr 27 2024 21:56:35 GMT+0530 (India Standard Time) - reqUrl: /api/cart/delete?cartItemId=3 - reqMethod: DELETE - error: Invalid status code: { message: 'Items successfully deleted' }
+
+Mon Apr 29 2024 19:48:35 GMT+0530 (India Standard Time) - reqUrl: /api/users/signup - reqMethod: POST - error: next is not defined
+
+Mon Apr 29 2024 19:49:50 GMT+0530 (India Standard Time) - reqUrl: /api/users/signup - reqMethod: POST - error: Cannot read properties of undefined (reading 'userRespository')
+
+Mon Apr 29 2024 19:50:54 GMT+0530 (India Standard Time) - reqUrl: /api/users/signup - reqMethod: POST - error: Cannot read properties of undefined (reading 'userRespository')
+
+Mon Apr 29 2024 19:51:06 GMT+0530 (India Standard Time) - reqUrl: /api/users/signup - reqMethod: POST - error: Cannot read properties of undefined (reading 'userRespository')
+
+Mon Apr 29 2024 20:56:22 GMT+0530 (India Standard Time) - reqUrl: /api/products/rate?productId=100&rating=1.5 - reqMethod: GET - error: Cannot read properties of undefined (reading 'then')
+
+Tue Apr 30 2024 00:26:54 GMT+0530 (India Standard Time) - reqUrl: /api/users/signin - reqMethod: POST - error: data and hash arguments required

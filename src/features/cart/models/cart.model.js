@@ -1,3 +1,5 @@
+import ApplicationError from "../../../error-handler/applicationError.js";
+
 let cartItemId = 0;
 
 export default class CartModel {
@@ -22,9 +24,11 @@ export default class CartModel {
         const cartItemIndex = cartItems.findIndex(cartItem => cartItem.cartItemId == cartItemId && cartItem.userId == userId);
 
         if (cartItemIndex < 0) {
-            return "Item not found"
+            throw new ApplicationError("Item Doesn't Exist In Cart", 400);
         } else {
+            const deletedItem = cartItems[cartItemIndex];
             cartItems.splice(cartItemIndex, 1);
+            return deletedItem;
         }
     }
 }

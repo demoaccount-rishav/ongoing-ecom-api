@@ -1,3 +1,4 @@
+import { getDb } from "../../../configs/mongodb.config.js";
 import ApplicationError from "../../../error-handler/applicationError.js";
 import UserModel from "../../user/models/user.model.js";
 
@@ -31,6 +32,7 @@ export default class ProductModel {
         return products.filter(eachProduct => (!category || eachProduct.category == category) && (!minPrice || eachProduct.price >= minPrice) && (!maxPrice || eachProduct.price <= maxPrice))
     }
 
+    /*
     static rateProduct(userId, productId, rating) {
         const users = UserModel.getAllUsers();
 
@@ -38,6 +40,12 @@ export default class ProductModel {
         const validateUser = users.find((user) => user.id == userId)
         if (!validateUser) {
             // throw new Error("User not found");
+            throw new ApplicationError("User not found", 400);
+        }
+        
+        if (Object.keys(user).length == 0) {
+            // throw new Error("User not found");
+            console.log(Object.keys(user));
             throw new ApplicationError("User not found", 400);
         }
 
@@ -65,6 +73,44 @@ export default class ProductModel {
 
         }
 
+    }
+    */
+
+    static async rateProduct(userId, productId, rating) {
+        // const users = UserModel.getAllUsers();
+
+        // modifications due to repository structure of user repository
+        const instanceDB = getDb();
+        const usersCollection = instanceDB.collection("users");
+
+        const user = await usersCollection.findOne({ id: userId });
+        if (Object.keys(user).length == 0) {
+            // throw new Error("User not found");
+            throw new ApplicationError("User not found", 400);
+        }
+
+        // validate product
+        const validateProduct = products.find((product) => product.id == productId);
+        if (!validateProduct) {
+            // throw new Error("Product not found");
+            throw new ApplicationError("Product not found", 400);
+        }
+
+        if (!validateProduct.ratings) {
+            validateProduct.ratings = []
+            validateProduct.ratings.push({ 'userId': userId, "rating": parseFloat(rating) });
+
+        } else {
+
+            const existingRatingIndex = validateProduct.ratings.findIndex((rating) => rating.userId == userId)
+
+            if (existingRatingIndex > -1) {
+                validateProduct.ratings[existingRatingIndex] = { 'userId': userId, "rating": parseFloat(rating) };
+
+            } else {
+                validateProduct.ratings.push({ 'userId': userId, "rating": parseFloat(rating) });
+            }
+        }
     }
 }
 

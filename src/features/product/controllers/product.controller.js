@@ -14,12 +14,12 @@ export default class ProductController {
         return res.status(201).json({ 'message': 'successfully inserted product', 'product-data': product })
     }
 
-    rateProduct(req, res, next) {
+    async rateProduct(req, res, next) {
         // const { userId, productId, rating } = req.query;
         const { productId, rating } = req.query;
         const userId = req.body.userId;
         try {
-            ProductModel.rateProduct(userId, productId, rating);
+            await ProductModel.rateProduct(userId, productId, rating)
             return res.status(200).json({ 'message': 'Product Rated Successfully' });
 
         } catch (error) {

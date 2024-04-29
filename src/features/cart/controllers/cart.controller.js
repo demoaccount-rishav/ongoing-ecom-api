@@ -21,23 +21,20 @@ export default class CartController {
         })
     }
 
-    delete(req, res) {
+    delete(req, res, next) {
         const userId = req.body.userId;
         const { cartItemId } = req.query;
 
-        const error = CartModel.delete(cartItemId, userId);
-        if (!error) {
+        try {
+            const deletedItem = CartModel.delete(cartItemId, userId);
             return res.status(201).json(
                 {
                     'message': 'Items successfully deleted',
+                    deletedItem,
                 }
             )
-        } else {
-            return res.status(401).json(
-                {
-                    'message': 'Item could not be deleted',
-                }
-            )
+        } catch (error) {
+            next(error)
         }
     }
 }
