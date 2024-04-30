@@ -1,17 +1,41 @@
 import ProductModel from "../models/product.model.js"
+import ProductRepository from "../repository/product.repository.js";
 
 export default class ProductController {
-
-    getAllProduct(req, res) {
-        const products = ProductModel.GetAll();
-        return res.status(200).json(products)
+    constructor() {
+        this.productRepository = new ProductRepository();
     }
 
-    addProduct(req, res) {
-        const { name, desc, price, category, sizes } = req.body;
-        let imageUrl = 'images/' + req.file.filename;
-        const product = ProductModel.add(name, desc, parseFloat(price), imageUrl, category, sizes);
-        return res.status(201).json({ 'message': 'successfully inserted product', 'product-data': product })
+    // getAllProduct(req, res) {
+    //     const products = ProductModel.GetAll();
+    //     return res.status(200).json(products)
+    // }
+
+    getAllProduct(req, res, next) {
+        try {
+            this.productRepository.GetAll().then(products => {
+                return res.status(200).json({ message: 'all the products in database', products });
+            })
+        } catch (err) {
+            next(err);
+        }
+    }
+
+    addProduct(req, res, next) {
+        try {
+
+            const { name, desc, price, category, sizes } = req.body;
+            let imageUrl = 'images/' + req.file.filename;
+
+            const instanceProductModel = new ProductModel(name, desc, parseFloat(price), imageUrl, category, sizes);
+
+            this.productRepository.add(instanceProductModel).then(product => {
+                return res.status(201).json({ 'message': 'successfully inserted product', 'product-data': product })
+            })
+
+        } catch (err) {
+            next(err);
+        }
     }
 
     async rateProduct(req, res, next) {
@@ -19,32 +43,65 @@ export default class ProductController {
         const { productId, rating } = req.query;
         const userId = req.body.userId;
         try {
-            await ProductModel.rateProduct(userId, productId, rating)
-            return res.status(200).json({ 'message': 'Product Rated Successfully' });
-
+            // await ProductModel.rateProduct(userId, productId, rating)
+            // return res.status(200).json({ 'message': 'Product Rated Successfully' });
+            this.productRepository.rateProduct(userId, parseInt(productId), parseFloat(rating)).then((val) => {
+                if (val.matchedCount > 0) {
+                    return res.status(200).json({ 'message': 'Product Rated Successfully', val });
+                } else {
+                    return res.status(200).json({ 'message': 'Could not rate product as product invalid for the given user', val });
+                }
+            })
         } catch (error) {
-            // return res.status(401).json({ 'message': 'Error Encounterd', error: error.message });
             next(error);
         }
     }
 
-    getOneProduct(req, res) {
-        const product = ProductModel.Get(req.params.id);
-        if (!product) {
-            return res.status(404).json({ 'message': `Product Not Found With id: ${req.params.id}` })
-        }
-        else {
-            return res.status(200).json({
-                'message': `Product Found With id: ${req.params.id}`,
-                'product-data': product,
+    // getOneProduct(req, res, next) {
+    //     const product = ProductModel.Get(req.params.id);
+    //     if (!product) {
+    //         return res.status(404).json({ 'message': `Product Not Found With id: ${req.params.id}` })
+    //     }
+    //     else {
+    //         return res.status(200).json({
+    //             'message': `Product Found With id: ${req.params.id}`,
+    //             'product-data': product,
+    //         })
+    //     }
+    // }
+
+    getOneProduct(req, res, next) {
+        try {
+            this.productRepository.Get(parseInt(req.params.id)).then(product => {
+                if (!product) {
+                    return res.status(404).json({ 'message': `Product Not Found With id: ${req.params.id}` })
+                } else {
+                    return res.status(200).json({
+                        'message': `Product Found With id: ${req.params.id}`,
+                        'product-data': product,
+                    })
+                }
             })
+        } catch (error) {
+            next(error)
         }
     }
 
     // localhost:3200/api/products/filter?minPrice=10&maxPrice=30&category=Category1
-    filterProducts(req, res) {
+    filterProducts(req, res, next) {
         const { minPrice, maxPrice, category } = req.query
-        const arr = ProductModel.filterProd(parseFloat(minPrice), parseFloat(maxPrice), category)
-        return res.status(200).json({ 'productsFound': arr })
+        try {
+            this.productRepository.filterProd(parseFloat(minPrice), parseFloat(maxPrice), category)
+                .then(products => {
+                    if (products.length > 0) {
+                        return res.status(200).json({ "msg": "products found", 'productsFound': products });
+                    }
+                    else {
+                        return res.status(404).json({ "msg": "products not found", 'productsFound': products });
+                    }
+                })
+        } catch (error) {
+            next(error)
+        }
     }
 }

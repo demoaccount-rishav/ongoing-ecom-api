@@ -2,9 +2,11 @@ import { getDb } from "../../../configs/mongodb.config.js";
 import ApplicationError from "../../../error-handler/applicationError.js";
 import UserModel from "../../user/models/user.model.js";
 
+let id = 0;
+
 export default class ProductModel {
-    constructor(id, name, desc, price, imageUrl, category, sizes) {
-        this.id = id
+    constructor(name, desc, price, imageUrl, category, sizes) {
+        this.id = ++id
         this.name = name
         this.desc = desc;
         this.price = price
@@ -13,24 +15,23 @@ export default class ProductModel {
         this.sizes = sizes
     }
 
-    static GetAll() {
-        return products;
-    }
+    // static GetAll() {
+    //     return products;
+    // }
 
-    static Get(id) {
-        return products.find(product => product.id == id);
-    }
+    // static Get(id) {
+    //     return products.find(product => product.id == id);
+    // }
 
-    static add(name, desc, price, imageUrl, category, sizes) {
-        let id = products.length + 1;
-        const product = new ProductModel(id, name, desc, price, imageUrl, category, sizes.split(','))
-        products.push(product);
-        return product;
-    }
+    // static add(name, desc, price, imageUrl, category, sizes) {
+    //     const product = new ProductModel(name, desc, price, imageUrl, category, sizes.split(','))
+    //     products.push(product);
+    //     return product;
+    // }
 
-    static filterProd(minPrice, maxPrice, category) {
-        return products.filter(eachProduct => (!category || eachProduct.category == category) && (!minPrice || eachProduct.price >= minPrice) && (!maxPrice || eachProduct.price <= maxPrice))
-    }
+    // static filterProd(minPrice, maxPrice, category) {
+    //     return products.filter(eachProduct => (!category || eachProduct.category == category) && (!minPrice || eachProduct.price >= minPrice) && (!maxPrice || eachProduct.price <= maxPrice))
+    // }
 
     /*
     static rateProduct(userId, productId, rating) {
@@ -116,7 +117,6 @@ export default class ProductModel {
 
 var products = [
     new ProductModel(
-        1,
         'Product 1',
         'Description for Product 1',
         19.99,
@@ -125,7 +125,6 @@ var products = [
         ['M', 'XL']
     ),
     new ProductModel(
-        2,
         'Product 2',
         'Description for Product 2',
         29.99,
@@ -134,7 +133,6 @@ var products = [
         ['M', 'XL']
     ),
     new ProductModel(
-        3,
         'Product 3',
         'Description for Product 3',
         39.99,

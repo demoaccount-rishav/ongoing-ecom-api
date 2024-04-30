@@ -25,11 +25,11 @@ export default class UserRepository {
         // Insert new user into the collection
         return usersCollection.insertOne(instanceUserModel)
             .then((result) => {
-                console.log(`New data added to database with insertID: ${result.insertedId}`);
+                console.log(`New user added to database with insertID: ${result.insertedId}`);
                 return instanceUserModel;
             })
             .catch((err) => {
-                throw new ApplicationError("Couldn't Enter Data Into DataBase", 400);
+                throw new ApplicationError("Couldn't enter user into dataBase", 400);
             })
     }
 

@@ -25,6 +25,7 @@ export default class UserController {
             // });
 
             this.userRespository.SignUp(user).then((newUser) => {
+                newUser.password = "hidden";
                 res.status(201).json({ 'message': 'User Successfully Added', newUser });
             });
 
