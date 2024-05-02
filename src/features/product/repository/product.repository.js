@@ -88,6 +88,64 @@ class ProductRepository {
         } else {
             const instanceDB = getDb();
             const productsCollection = instanceDB.collection(this.collection);
+
+            /*
+            // Method 1
+            // 1. Find the product
+            // 2. Find the rating
+            const userRating = productsCollection.findOne({ id: productId })
+                .then(product => {
+                    return product?.ratings?.find(ratings => ratings.userId == userId);
+                });
+            if (userRating) {
+                // 3. Update the rating
+                return productsCollection.updateOne(
+                    { id: productId, "ratings.userId": userId },
+                    { $set: { "ratings.$.rating": rating } })
+                    .then((res) => {
+                        return res;
+                    })
+                    .catch(err => {
+                        throw new ApplicationError("error performing rateProduct", 400);
+                    })
+
+            } else {
+                return productsCollection.updateOne(
+                    { id: productId },
+                    { $push: { ratings: { userId, rating } } })
+                    .then((res) => {
+                        return res;
+                    })
+                    .catch(err => {
+                        throw new ApplicationError("error performing rateProduct", 400);
+                    })
+
+            }
+            */
+
+            // Method 2
+            return productsCollection.updateOne({ id: productId }, { $pull: { ratings: { userId } } })
+                .then((val) => {
+                    return productsCollection.updateOne({ id: productId }, { $push: { ratings: { userId, rating } } })
+                        .then(val => {
+                            return val;
+                        })
+                        .catch((err) => {
+                            console.log(err); throw new ApplicationError("error performing rateProduct", 400);
+                        })
+                }).catch(err => {
+                    throw new ApplicationError("error performing rateProduct", 400)
+                })
+        }
+    }
+
+    /*
+    rateProduct(userId, productId, rating) {
+        if (!productId || !userId || !rating) {
+            throw new ApplicationError("Rating fields are insufficient", 400);
+        } else {
+            const instanceDB = getDb();
+            const productsCollection = instanceDB.collection(this.collection);
             return productsCollection.updateOne(
                 { id: productId },
                 { $push: { ratings: { userId, rating } } })
@@ -99,7 +157,9 @@ class ProductRepository {
                 })
         }
     }
-
+    */
 }
+
+
 
 export default ProductRepository

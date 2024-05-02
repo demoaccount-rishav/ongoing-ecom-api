@@ -38,7 +38,7 @@ export default class ProductController {
         }
     }
 
-    async rateProduct(req, res, next) {
+    rateProduct(req, res, next) {
         // const { userId, productId, rating } = req.query;
         const { productId, rating } = req.query;
         const userId = req.body.userId;
@@ -46,11 +46,7 @@ export default class ProductController {
             // await ProductModel.rateProduct(userId, productId, rating)
             // return res.status(200).json({ 'message': 'Product Rated Successfully' });
             this.productRepository.rateProduct(userId, parseInt(productId), parseFloat(rating)).then((val) => {
-                if (val.matchedCount > 0) {
-                    return res.status(200).json({ 'message': 'Product Rated Successfully', val });
-                } else {
-                    return res.status(200).json({ 'message': 'Could not rate product as product invalid for the given user', val });
-                }
+                return res.status(200).json({ 'message': 'Product Rated Successfully' });
             })
         } catch (error) {
             next(error);
