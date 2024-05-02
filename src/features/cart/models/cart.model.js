@@ -11,26 +11,26 @@ export default class CartModel {
         this.cartItemId = ++cartItemId;
     }
 
-    static add(userId, productId, quantity) {
-        cartItems.push(new CartModel(userId, productId, quantity));
-        console.log(cartItems);
-    }
+    // static add(userId, productId, quantity) {
+    //     cartItems.push(new CartModel(userId, productId, quantity));
+    //     console.log(cartItems);
+    // }
 
-    static getUserIdCart(userId) {
-        return cartItems.filter(cartItem => cartItem.userId === userId)
-    }
+    // static getUserIdCart(userId) {
+    //     return cartItems.filter(cartItem => cartItem.userId === userId)
+    // }
 
-    static delete(cartItemId, userId) {
-        const cartItemIndex = cartItems.findIndex(cartItem => cartItem.cartItemId == cartItemId && cartItem.userId == userId);
+    // static delete(cartItemId, userId) {
+    //     const cartItemIndex = cartItems.findIndex(cartItem => cartItem.cartItemId == cartItemId && cartItem.userId == userId);
 
-        if (cartItemIndex < 0) {
-            throw new ApplicationError("Item Doesn't Exist In Cart", 400);
-        } else {
-            const deletedItem = cartItems[cartItemIndex];
-            cartItems.splice(cartItemIndex, 1);
-            return deletedItem;
-        }
-    }
+    //     if (cartItemIndex < 0) {
+    //         throw new ApplicationError("Item Doesn't Exist In Cart", 400);
+    //     } else {
+    //         const deletedItem = cartItems[cartItemIndex];
+    //         cartItems.splice(cartItemIndex, 1);
+    //         return deletedItem;
+    //     }
+    // }
 }
 
 

@@ -5,9 +5,17 @@ const CartRouter = Router()
 
 const cartController = new CartController();
 
-CartRouter.post('/', cartController.addCartItem);
-CartRouter.get('/', cartController.get);
-CartRouter.delete('/delete',cartController.delete)
+CartRouter.post('/', (req, res, next) => {
+    cartController.addCartItem(req, res, next);
+});
+
+CartRouter.get('/', (req, res, next) => {
+    cartController.getByUser(req, res, next);
+});
+
+CartRouter.delete('/delete', (req, res, next) => {
+    cartController.deleteCartItem(req, res, next)
+});
 
 
 export default CartRouter

@@ -82,8 +82,8 @@ export default class UserController {
     async signin(req, res, next) {
         try {
             const user = await this.userRespository.findByEmail(req.body.email);
-            if (!user.name) {
-                return res.status(404).json({ 'message': 'User not found', user });
+            if (!user?.name) {
+                return res.status(404).json({ 'message': 'User not found' });
             } else {
                 try {
                     const result = await compare(req.body.password, user.password);

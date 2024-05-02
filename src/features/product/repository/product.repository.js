@@ -123,7 +123,7 @@ class ProductRepository {
             }
             */
 
-            // Method 2
+            // Method 2 (best approach)
             return productsCollection.updateOne({ id: productId }, { $pull: { ratings: { userId } } })
                 .then((val) => {
                     return productsCollection.updateOne({ id: productId }, { $push: { ratings: { userId, rating } } })
