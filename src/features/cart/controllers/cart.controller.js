@@ -23,10 +23,14 @@ export default class CartController {
         const userId = req.body.userId;
 
         try {
-            const instanceCartModel = new CartModel(userId, productId, quantity);
+            const instanceCartModel = new CartModel(parseInt(userId), parseInt(productId), parseInt(quantity));
             this.cartRepository.add(instanceCartModel)
-                .then((item) => {
-                    return res.status(201).json({ 'message': 'Cart Item Is Added', itemAdded: item });
+                .then((result) => {
+                    if (result.upsertedCount == 1) {
+                        return res.status(201).json({ 'message': 'New art item is added' });
+                    } else {
+                        return res.status(201).json({ 'message': 'Cart item quantity is updated' });
+                    }
                 })
         } catch (error) {
             next(error);
@@ -97,12 +101,12 @@ export default class CartController {
         const { cartItemId } = req.query;
 
         try {
-            this.cartRepository.delete(parseInt(cartItemId), (parseInt))
+            this.cartRepository.deleteOne(cartItemId, parseInt(userId))
                 .then(deletedCount => {
                     if (deletedCount >= 1) {
                         return res.status(201).json(
                             {
-                                'message': 'Item(s) successfully deleted',
+                                'message': 'Item successfully deleted',
                             }
                         )
                     } else {
